@@ -7,26 +7,14 @@ dict[res1]=$((a+b*c));
 dict[res2]=$((c+a/b));
 dict[res3]=$((a%b+c));
 dict[res4]=$((a*b+c));
-#if [[ $res1 -gt $res2 && $res1 -gt $res3 && $res1 -gt $res4 ]];
-#then
-# echo $res1 ' is Greater';
-#elif [[ $res2 -gt $res1 && $res2 -gt $res3 && $res1 -gt $res4 ]];
-#then
-# echo $res2 ' is Greater';
-#elif [[ $res3 -gt $res2 && $res3 -gt $res1 && $res3 -gt $res4 ]];
-#then
-# echo $res3 ' is Greater';
-#else
-# echo $res4 ' is Greater';
-#fi
 arr=();
 arr=(${dict[res1]} ${dict[res2]} ${dict[res3]} ${dict[res4]});
 
 readarray -t sorted < <(for a in "${arr[@]}"; do echo "$a"; done | sort -n)
-readarray -t sorted2 < <(for a in "${arr[@]}"; do echo "$a"; done | sort -r)
+readarray -t sorted2 < <(for a in "${arr[@]}"; do echo "$a"; done | sort -nr)
 
-echo ${sorted[@]};
-echo "reverse : "${sorted2[@]};
+echo "Ascending Order : "${sorted[@]};
+echo "Descending Order : "${sorted2[@]};
 echo "Arr = "${arr[@]};
 #echo ${dict[@]};
 
