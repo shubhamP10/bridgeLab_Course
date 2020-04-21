@@ -22,11 +22,4 @@ else
 	done
 	echo "Employee's total working Hours in this month "$totalWorkedHR;
 	echo "Employee's Monthly Wage : "$monthlyWage;
-
-
-
-	#echo "Today's Working Hour"$worked;
-	#echo "Employee's Daily Wage : "$dailyWage;
-	
 fi
-
